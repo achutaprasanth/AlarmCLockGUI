@@ -20,7 +20,8 @@ Putting forward a while loop which takes the argument of the time, the user want
 Create a display window for user input.
 
 #1
-#Importing all the necessary libraries to form the alarm clock:
+
+Importing all the necessary libraries to form the alarm clock:
     
     from tkinter import *
     import datetime
@@ -65,6 +66,7 @@ If loop suggests that if the user input time set_alarm_timer matches with the wh
 winsound.SND_ASYNC plays the system generated sound as soon the condition satisfies, acting as a reminder for the alarm clock.
 
 #3
+
 Creating GUI using tkinter:
 
     clock = Tk()
