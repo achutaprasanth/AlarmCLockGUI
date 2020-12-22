@@ -21,10 +21,10 @@ Create a display window for user input.
 
 #1
 #Importing all the necessary libraries to form the alarm clock:
-     from tkinter import *
-     import datetime
-     import time
-     import winsound
+    from tkinter import *
+    import datetime
+    import time
+    import winsound
 
 Explanation:
 
@@ -32,24 +32,26 @@ Explanation:
 *Datetime and time modules in python help us to work with the dates and time of the current day when the user is operating python and to manipulate it too.
 *Winsound module provides access to the basic sound playing machinery provided by Windows platforms. This is useful to generate the sound immediately when a function is called.
 
-#2
+#2 
+
 Create a while loop:
+    
     def alarm(set_alarm_timer):
-        while True:
-           time.sleep(1)
-           current_time = datetime.datetime.now()
-           now = current_time.strftime("%H:%M:%S")
-           date = current_time.strftime("%d/%m/%Y")
-           print("The Set Date is:",date)
-           print(now)
+         while True:
+            time.sleep(1)
+            current_time = datetime.datetime.now()
+            now = current_time.strftime("%H:%M:%S")
+            date = current_time.strftime("%d/%m/%Y")
+            print("The Set Date is:",date)
+            print(now)
                if now == set_alarm_timer:
                   print("Time to Wake up")
-           winsound.PlaySound("sound.wav",winsound.SND_ASYNC)
-           break
+            winsound.PlaySound("sound.wav",winsound.SND_ASYNC)
+            break
 
     def actual_time():
-      set_alarm_timer = f"{hour.get()}:{min.get()}:{sec.get()}"
-      alarm(set_alarm_timer)
+    set_alarm_timer = f"{hour.get()}:{min.get()}:{sec.get()}"
+    alarm(set_alarm_timer)
     
 Explanation:
 
@@ -64,29 +66,29 @@ Explanation:
 #3
 Creating GUI using tkinter:
 
-clock = Tk()
+    clock = Tk()
 
-clock.title("DataFlair Alarm Clock")
-clock.geometry("400x200")
-time_format=Label(clock, text= "Enter time in 24 hour format!", fg="red",bg="black",font="Arial").place(x=60,y=120)
-addTime = Label(clock,text = "Hour  Min   Sec",font=60).place(x = 110)
-setYourAlarm = Label(clock,text = "When to wake you up",fg="blue",relief = "solid",font=("Helevetica",7,"bold")).place(x=0, y=29)
+    clock.title("DataFlair Alarm Clock")
+    clock.geometry("400x200")
+    time_format=Label(clock, text= "Enter time in 24 hour format!", fg="red",bg="black",font="Arial").place(x=60,y=120)
+    addTime = Label(clock,text = "Hour  Min   Sec",font=60).place(x = 110)
+    setYourAlarm = Label(clock,text = "When to wake you up",fg="blue",relief = "solid",font=("Helevetica",7,"bold")).place(x=0, y=29)
 
-# The Variables we require to set the alarm(initialization):
-hour = StringVar()
-min = StringVar()
-sec = StringVar()
+    #The Variables we require to set the alarm(initialization):
+    hour = StringVar()
+    min = StringVar()
+    sec = StringVar()
 
-#Time required to set the alarm clock:
-hourTime= Entry(clock,textvariable = hour,bg = "pink",width = 15).place(x=110,y=30)
-minTime= Entry(clock,textvariable = min,bg = "pink",width = 15).place(x=150,y=30)
-secTime = Entry(clock,textvariable = sec,bg = "pink",width = 15).place(x=200,y=30)
+    #Time required to set the alarm clock:
+    hourTime= Entry(clock,textvariable = hour,bg = "pink",width = 15).place(x=110,y=30)
+    minTime= Entry(clock,textvariable = min,bg = "pink",width = 15).place(x=150,y=30)
+    secTime = Entry(clock,textvariable = sec,bg = "pink",width = 15).place(x=200,y=30)
 
-#To take the time input by user:
-submit = Button(clock,text = "Set Alarm",fg="red",width = 10,command = actual_time).place(x =110,y=70)
+    #To take the time input by user:
+    submit = Button(clock,text = "Set Alarm",fg="red",width = 10,command = actual_time).place(x =110,y=70)
 
-clock.mainloop()
-#Execution of the window.
+    clock.mainloop()
+    #Execution of the window.
 
 Explanation:
 
