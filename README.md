@@ -21,10 +21,10 @@ Create a display window for user input.
 
 #1
 #Importing all the necessary libraries to form the alarm clock:
-from tkinter import *
-import datetime
-import time
-import winsound
+     from tkinter import *
+     import datetime
+     import time
+     import winsound
 
 Explanation:
 
@@ -34,22 +34,22 @@ Explanation:
 
 #2
 Create a while loop:
-def alarm(set_alarm_timer):
-    while True:
-        time.sleep(1)
-        current_time = datetime.datetime.now()
-        now = current_time.strftime("%H:%M:%S")
-        date = current_time.strftime("%d/%m/%Y")
-        print("The Set Date is:",date)
-        print(now)
-        if now == set_alarm_timer:
-            print("Time to Wake up")
-        winsound.PlaySound("sound.wav",winsound.SND_ASYNC)
-        break
+    def alarm(set_alarm_timer):
+        while True:
+           time.sleep(1)
+           current_time = datetime.datetime.now()
+           now = current_time.strftime("%H:%M:%S")
+           date = current_time.strftime("%d/%m/%Y")
+           print("The Set Date is:",date)
+           print(now)
+               if now == set_alarm_timer:
+                  print("Time to Wake up")
+           winsound.PlaySound("sound.wav",winsound.SND_ASYNC)
+           break
 
-def actual_time():
-    set_alarm_timer = f"{hour.get()}:{min.get()}:{sec.get()}"
-    alarm(set_alarm_timer)
+    def actual_time():
+      set_alarm_timer = f"{hour.get()}:{min.get()}:{sec.get()}"
+      alarm(set_alarm_timer)
     
 Explanation:
 
